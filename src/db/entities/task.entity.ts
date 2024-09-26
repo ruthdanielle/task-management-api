@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class TaskEntity{
 
     @PrimaryGeneratedColumn()
-    id: string;
+    id?: string;
 
     @Column({type: 'varchar'})
     title: string;

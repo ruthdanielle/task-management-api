@@ -1,6 +1,6 @@
 import { IsDateString, IsEnum, IsOptional, IsString, IsUUID, MaxLength, MinLength } from "class-validator";
 
-export enum TaskDtoStatusEnum{
+export enum TaskStatusEnum{
     TO_DO = 'TO_DO',
     IN_PROGRESS = 'IN_PROGRESS',
     DONE = 'DONE'
@@ -20,7 +20,7 @@ export class TaskDto{
     @MaxLength(512)
     description: string;
 
-    @IsEnum(TaskDtoStatusEnum)
+    @IsEnum(TaskStatusEnum)
     @IsOptional()
     status: string;
 
@@ -31,4 +31,9 @@ export class TaskDto{
 export interface FindAllParameters {
     title: string;
     status: string;
+}
+
+export class TaskRouteParameters {
+    @IsUUID()
+    id: string;
 }
