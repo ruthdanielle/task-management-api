@@ -10,6 +10,6 @@ export class UserEntity{
     username: string;
 
     @Column({type: 'varchar', name: 'password_hash'})
-    password: string;
+    passwordHash: string;
 
 }
